@@ -1,6 +1,6 @@
 // https://pac.itzmx.com
 
-var proxy = "PROXY 94.23.7.145:25;192.95.30.85:25;198.27.67.207:25";
+var proxy = "PROXY 192.95.30.85:25;198.27.67.207:25";
 
 var domains = {
   "bannedbook.org": 1, 
