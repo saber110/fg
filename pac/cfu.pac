@@ -1,4 +1,4 @@
-var proxy = "PROXY 192.95.30.85:25;198.27.67.207:25";
+var proxy = "PROXY 108.61.177.48:25;";
 
 var domains = {
   "bannedbook.org": 1, 
