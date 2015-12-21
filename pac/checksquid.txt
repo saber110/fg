@@ -1,0 +1,2 @@
+squidclient -p 25 cache_object://localhost/info
+注意/etc/hosts文件需要有127.0.0.1 localhost，不然会报错
