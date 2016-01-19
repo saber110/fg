@@ -1,4 +1,4 @@
-var proxy = "PROXY 192.243.109.96:25;192.243.109.107:25;45.32.40.129:25;192.157.230.134:25";
+var proxy = "PROXY server01.pac.itzmx.com:25;";
 
 var domains = {
   "bannedbook.org": 1, 
@@ -2635,6 +2635,9 @@ var direct = 'DIRECT;';
 
 var hasOwnProperty = Object.hasOwnProperty;
 
+var servlist = ["PROXY 192.243.109.96:25","PROXY 192.243.109.107:25","PROXY 45.32.40.129:25","PROXY 192.157.230.134:25"]; 
+//var nnn = Math.floor(Math.random() * servlist.length + 1)-1;
+
 function FindProxyForURL(url, host) {
     if (host == "www.haosou.com") {
         return "PROXY 360.itzmx.com:80";
@@ -2648,7 +2651,7 @@ function FindProxyForURL(url, host) {
             if (url.indexOf('http://') == 0)
                 return "PROXY 360.itzmx.com:80";
         if (hasOwnProperty.call(domains, suffix)) {
-            return proxy;
+            return servlist[Math.floor(Math.random() * servlist.length + 1)-1];
         }
         if (pos <= 0) {
             break;
