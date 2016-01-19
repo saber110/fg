@@ -1,0 +1,9 @@
+apt-get remove sendmail
+apt-get install curl
+apt-get -y install squid
+curl https://raw.githubusercontent.com/kgfw/fg/master/pac/debian-squid.conf > /etc/squid/squid.conf
+mkdir  /var/cache/squid
+chmod 777 /var/cache/squid
+/etc/init.d/squid stop
+squid -z
+reboot
