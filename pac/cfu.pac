@@ -2635,7 +2635,7 @@ var direct = 'DIRECT;';
 
 var hasOwnProperty = Object.hasOwnProperty;
 
-var servlist = ["PROXY 192.243.109.96:25","PROXY 192.243.109.107:25","PROXY 45.32.40.129:25","PROXY 192.157.230.134:25"]; 
+var servlist = ["PROXY 45.32.44.243:25","PROXY 192.243.109.96:25","PROXY 192.243.109.107:25","PROXY 45.32.40.129:25","PROXY 192.157.230.134:25"]; 
 //var nnn = Math.floor(Math.random() * servlist.length + 1)-1;
 
 function FindProxyForURL(url, host) {
