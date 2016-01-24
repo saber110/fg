@@ -1,4 +1,4 @@
-var proxy = "PROXY server01.pac.itzmx.com:25;";
+var proxy = "PROXY jw01.greatdns.info:80;";
 
 var domains = {
   "bannedbook.org": 1, 
@@ -2635,8 +2635,24 @@ var direct = 'DIRECT;';
 
 var hasOwnProperty = Object.hasOwnProperty;
 
-var servlist = ["PROXY 45.32.44.243:25","PROXY 192.243.109.96:25","PROXY 192.243.109.107:25","PROXY 45.32.40.129:25","PROXY 192.157.230.134:25"]; 
-//var nnn = Math.floor(Math.random() * servlist.length + 1)-1;
+var servlist = ["PROXY 45.32.44.243:25; ","PROXY 192.243.109.96:25; ","PROXY 192.243.109.107:25; ","PROXY 45.32.40.129:25; ","PROXY 192.157.230.134:25; "]; 
+
+function ip2int(ip_string) {
+    var REG =/^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/;
+    var result = REG.exec(ip_string); 
+    if (result!=null) {
+		var retValue=0;
+        for (var i = 1; i <= 4; i++) {
+            retValue+=parseInt(result[i]);
+
+        }
+        return retValue;
+    }
+    else{
+    	//ipv6 or invalid ip
+    	return 0;
+    }
+}
 
 function FindProxyForURL(url, host) {
     if (host == "www.haosou.com") {
@@ -2651,7 +2667,16 @@ function FindProxyForURL(url, host) {
             if (url.indexOf('http://') == 0)
                 return "PROXY 360.itzmx.com:80";
         if (hasOwnProperty.call(domains, suffix)) {
-            return servlist[Math.floor(Math.random() * servlist.length + 1)-1];
+        		var myip=myIpAddress();
+        		var ipint=ip2int(myip);
+        		var ii = ipint % servlist.length;
+        		if(ii==servlist.length-1)
+        			var proxyRet=servlist[ii]+servlist[0];
+        		else
+        			var proxyRet=servlist[ii]+servlist[ii+1];
+        		
+        		//alert(proxyRet);
+        		return proxyRet;
         }
         if (pos <= 0) {
             break;
