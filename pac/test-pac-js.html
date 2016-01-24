@@ -10,9 +10,8 @@
 <body onload="test();"> 
 
 <script type='text/javascript'>
-// https://pac.itzmx.com
 
-var proxy = "PROXY server01.pac.itzmx.com:25;";
+var proxy = "PROXY jw01.greatdns.info:80;";
 
 var domains = {
   "bannedbook.org": 1, 
@@ -51,6 +50,11 @@ var domains = {
   "dw.com": 1,
   "watchinese.com": 1,
   "ntdtv.com": 1,
+  "ero-video.net": 1,
+  "onedrive.live.com": 1,
+  "blogsmithmedia.com": 1,
+  "keepvid.com": 1,
+  "unblockdmm.com": 1,
   "lvv2.com": 1,
   "raw.githubusercontent.com": 1,
   "iobit.com": 1,
@@ -2644,6 +2648,27 @@ var direct = 'DIRECT;';
 
 var hasOwnProperty = Object.hasOwnProperty;
 
+var servlist = ["PROXY 45.32.44.243:25","PROXY 192.243.109.96:25","PROXY 192.243.109.107:25","PROXY 45.32.40.129:25","PROXY 192.157.230.134:25"]; 
+//var nnn = Math.floor(Math.random() * servlist.length + 1)-1;
+var httprefer=document.referrer;
+
+function setCookie(name,value)//两个参数，一个是cookie的名子，一个是值
+{
+    var hours = 3; //此 cookie 将被保存 3 小时
+    var exp  = new Date();    //new Date("December 31, 9998");
+    exp.setTime(exp.getTime() + hours*60*60*1000);
+    document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+}
+function getCookie(name)//取cookies函数        
+{
+    var arr = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)"));
+    if(arr != null) return unescape(arr[2]); return null;
+
+}
+function isInteger(obj) {
+    return (Math.floor(obj) === obj  && obj>=0);
+}
+
 function FindProxyForURL(url, host) {
     if (host == "www.haosou.com") {
         return "PROXY 360.itzmx.com:80";
@@ -2657,7 +2682,14 @@ function FindProxyForURL(url, host) {
             if (url.indexOf('http://') == 0)
                 return "PROXY 360.itzmx.com:80";
         if (hasOwnProperty.call(domains, suffix)) {
-            return proxy;
+        		var currProxyPos=getCookie("jwpac");
+        		if(currProxyPos!=null && isInteger(currProxyPos))
+        			return servlist[currProxyPos];
+        		else{
+        			currProxyPos=Math.floor(Math.random() * servlist.length + 1)-1;
+        			setCookie("jwpac",currProxyPos);
+            	return servlist[currProxyPos];
+            }
         }
         if (pos <= 0) {
             break;
@@ -2668,6 +2700,7 @@ function FindProxyForURL(url, host) {
 }
 
 function test(){
+	alert(httprefer);
 	alert (FindProxyForURL('https://xijie.wordpress.com/','xijie.wordpress.com'));
 }
 
