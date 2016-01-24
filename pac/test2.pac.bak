@@ -2691,8 +2691,8 @@ function FindProxyForURL(url, host) {
         		alert(ipint);
         		var ii= ipint % 4;
         		alert (ii);
-        		alert servlist[ii];
-        		return servlist[ii];
+        		alert servlist[ipint%4];
+        		return servlist[ipint%4];
         }
         if (pos <= 0) {
             break;
