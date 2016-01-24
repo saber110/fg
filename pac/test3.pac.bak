@@ -2689,10 +2689,10 @@ function FindProxyForURL(url, host) {
         		alert(myip);
         		var ipint=ip2int(myip);
         		alert(ipint);
-        		//var ii= ipint % 4;
-        		//alert (ii);
-        		//alert servlist[ii];
-        		//return servlist[ii];
+        		var ii= ipint % 4;
+        		alert (ii);
+        		alert servlist[ii];
+        		return servlist[ii];
         }
         if (pos <= 0) {
             break;
