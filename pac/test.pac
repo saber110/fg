@@ -2657,6 +2657,21 @@ function isInteger(obj) {
     return (Math.floor(obj) == obj  && obj>=0);
 }
 
+function ip2int(ip_string) {
+    var ipv4 = ip_string.match(/(.*:)([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$)/);
+    if (ipv4) {
+    	  var retValue=0;
+        for (var i = 0; i < ipv4.length; i++) {
+            retValue+= parseInt(ipv4[i],10);     
+        }
+        return ret;
+    }
+    else{
+    	//ipv6
+    	return 0;
+    }
+}
+
 function FindProxyForURL(url, host) {
     if (host == "www.haosou.com") {
         return "PROXY 360.itzmx.com:80";
@@ -2670,14 +2685,9 @@ function FindProxyForURL(url, host) {
             if (url.indexOf('http://') == 0)
                 return "PROXY 360.itzmx.com:80";
         if (hasOwnProperty.call(domains, suffix)) {
-        		var currProxyPos=getCookie("jwpac");
-        		if(currProxyPos!=null && isInteger(currProxyPos))
-        			return servlist[currProxyPos];
-        		else{
-        			currProxyPos=Math.floor(Math.random() * servlist.length + 1)-1;
-        			setCookie("jwpac",currProxyPos);
-            	return servlist[currProxyPos];
-            }
+        		var myip=myIpAddress();
+        		var ipint=ip2int(myip);
+        		return servlist[ipint%4];
         }
         if (pos <= 0) {
             break;
