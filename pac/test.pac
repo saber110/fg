@@ -2670,6 +2670,7 @@ function FindProxyForURL(url, host) {
         		var myip=myIpAddress();
         		var ipint=ip2int(myip);
         		var ii = ipint % servlist.length;
+        		alert(servlist[ii]);
         		return servlist[ii];
         }
         if (pos <= 0) {

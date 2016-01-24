@@ -2636,39 +2636,20 @@ var direct = 'DIRECT;';
 var hasOwnProperty = Object.hasOwnProperty;
 
 var servlist = ["PROXY 45.32.44.243:25","PROXY 192.243.109.96:25","PROXY 192.243.109.107:25","PROXY 45.32.40.129:25","PROXY 192.157.230.134:25"]; 
-//var nnn = Math.floor(Math.random() * servlist.length + 1)-1;
-var httprefer=document.referrer;
-
-function setCookie(name,value)
-{
-    var hours = 3;
-    var exp  = new Date();    //new Date("December 31, 9998");
-    exp.setTime(exp.getTime() + hours*60*60*1000);
-    document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
-}
-function getCookie(name)
-{
-    var arr = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)"));
-    if(arr != null) return unescape(arr[2]); return null;
-
-}
-
-function isInteger(obj) {
-    return (Math.floor(obj) == obj  && obj>=0);
-}
 
 function ip2int(ip_string) {
-    var ipv4 = ip_string.match(/(.*:)([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$)/);
-    alert (ipv4);
-    if (ipv4) {
-    	  var retValue=0;
-        for (var i = 0; i < ipv4.length; i++) {
-            retValue+= parseInt(ipv4[i],10);     
+    var REG =/^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/;
+    var result = REG.exec(ip_string); 
+    if (result!=null) {
+		var retValue=0;
+        for (var i = 1; i <= 4; i++) {
+            retValue+=parseInt(result[i]);
+
         }
-        return ret;
+        return retValue;
     }
     else{
-    	//ipv6
+    	//ipv6 or invalid ip
     	return 0;
     }
 }
@@ -2687,13 +2668,10 @@ function FindProxyForURL(url, host) {
                 return "PROXY 360.itzmx.com:80";
         if (hasOwnProperty.call(domains, suffix)) {
         		var myip=myIpAddress();
-        		alert(myip);
         		var ipint=ip2int(myip);
-        		alert(ipint);
-        		//var ii= ipint % 4;
-        		//alert (ii);
-        		//alert servlist[ii];
-        		//return servlist[ii];
+        		var ii = ipint % servlist.length;
+        		alert();
+        		return servlist[ii];
         }
         if (pos <= 0) {
             break;
