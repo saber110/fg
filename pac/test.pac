@@ -2639,14 +2639,14 @@ var servlist = ["PROXY 45.32.44.243:25","PROXY 192.243.109.96:25","PROXY 192.243
 //var nnn = Math.floor(Math.random() * servlist.length + 1)-1;
 var httprefer=document.referrer;
 
-function setCookie(name,value)//两个参数，一个是cookie的名子，一个是值
+function setCookie(name,value)
 {
-    var hours = 3; //此 cookie 将被保存 3 小时
+    var hours = 3;
     var exp  = new Date();    //new Date("December 31, 9998");
     exp.setTime(exp.getTime() + hours*60*60*1000);
     document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
 }
-function getCookie(name)//取cookies函数        
+function getCookie(name)
 {
     var arr = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)"));
     if(arr != null) return unescape(arr[2]); return null;
