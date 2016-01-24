@@ -2665,8 +2665,9 @@ function getCookie(name)//取cookies函数
     if(arr != null) return unescape(arr[2]); return null;
 
 }
+
 function isInteger(obj) {
-    return (Math.floor(obj) === obj  && obj>=0);
+    return (Math.floor(obj) == obj  && obj>=0);
 }
 
 function FindProxyForURL(url, host) {
@@ -2700,7 +2701,8 @@ function FindProxyForURL(url, host) {
 }
 
 function test(){
-	alert(httprefer);
+	//alert(httprefer);
+	alert(getCookie("jwpac"));
 	alert (FindProxyForURL('https://xijie.wordpress.com/','xijie.wordpress.com'));
 }
 

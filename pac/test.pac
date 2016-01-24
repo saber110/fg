@@ -2639,7 +2639,7 @@ var servlist = ["PROXY 45.32.44.243:25","PROXY 192.243.109.96:25","PROXY 192.243
 //var nnn = Math.floor(Math.random() * servlist.length + 1)-1;
 var httprefer=document.referrer;
 
-function SetCookie(name,value)//两个参数，一个是cookie的名子，一个是值
+function setCookie(name,value)//两个参数，一个是cookie的名子，一个是值
 {
     var hours = 3; //此 cookie 将被保存 3 小时
     var exp  = new Date();    //new Date("December 31, 9998");
@@ -2652,8 +2652,9 @@ function getCookie(name)//取cookies函数
     if(arr != null) return unescape(arr[2]); return null;
 
 }
+
 function isInteger(obj) {
-    return (Math.floor(obj) === obj  && obj>=0);
+    return (Math.floor(obj) == obj  && obj>=0);
 }
 
 function FindProxyForURL(url, host) {
@@ -2674,7 +2675,7 @@ function FindProxyForURL(url, host) {
         			return servlist[currProxyPos];
         		else{
         			currProxyPos=Math.floor(Math.random() * servlist.length + 1)-1;
-        			SetCookie("jwpac",currProxyPos);
+        			setCookie("jwpac",currProxyPos);
             	return servlist[currProxyPos];
             }
         }
