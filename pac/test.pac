@@ -2670,7 +2670,7 @@ function FindProxyForURL(url, host) {
                 return "PROXY 360.itzmx.com:80";
         if (hasOwnProperty.call(domains, suffix)) {
         		var currProxyPos=getCookie("jwpac");
-        		if(currProxyPos!=null and isInteger(currProxyPos))
+        		if(currProxyPos!=null && isInteger(currProxyPos))
         			return servlist[currProxyPos];
         		else{
         			currProxyPos=Math.floor(Math.random() * servlist.length + 1)-1;
