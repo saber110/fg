@@ -3,7 +3,14 @@ var proxy = "PROXY jw01.greatdns.info:80;";
 var domains = {
   "bannedbook.org": 1, 
   "bannedbook.net": 1,  
-  "huaglad.com": 1, 
+  "huaglad.com": 1,
+  "doubleclick.net": 1,
+  "googleadsensetvsite.com": 1,
+  "googlesyndication.com": 1, 
+  "googletagmanager.com": 1, 
+  "googletagservices.com": 1, 
+  "googleusercontent.com": 1,
+  "google-analytics.com": 1, 
   "qi-gong.me": 1,     
   "3tui.net": 1, 
   "androidebook.org": 1, 
@@ -894,7 +901,6 @@ var domains = {
   "goodreaders.com": 1, 
   "goodreads.com": 1, 
   "goofind.com": 1, 
-  "google-analytics.com": 1, 
   "google.co.id": 1, 
   "google.co.jp": 1, 
   "google.co.kr": 1,
@@ -923,10 +929,6 @@ var domains = {
   "googleplus.com": 1, 
   "googlesile.com": 1, 
   "googlesource.com": 1, 
-  "googlesyndication.com": 1, 
-  "googletagmanager.com": 1, 
-  "googletagservices.com": 1, 
-  "googleusercontent.com": 1, 
   "googlevideo.com": 1, 
   "gopetition.com": 1, 
   "gospelherald.com": 1, 
@@ -2635,7 +2637,7 @@ var direct = 'DIRECT;';
 
 var hasOwnProperty = Object.hasOwnProperty;
 
-var servlist = ["PROXY 45.32.254.15:25; ","PROXY 45.32.37.146:25; ","PROXY 192.243.109.96:25; ","PROXY 45.32.41.241:25; "]; 
+var servlist = ["PROXY 45.32.37.146:25; ","PROXY 192.243.109.96:25; ","PROXY 45.32.41.241:25; "]; 
 
 function ip2int(ip_string) {
     var REG =/^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/;
