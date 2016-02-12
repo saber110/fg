@@ -10,7 +10,7 @@ var domains = {
   "googletagmanager.com": 1, 
   "googletagservices.com": 1, 
   "googleusercontent.com": 1,
-  "google-analytics.com": 1, 
+  "google-analytics.com": 1,
   "qi-gong.me": 1,     
   "3tui.net": 1, 
   "androidebook.org": 1, 
@@ -2637,7 +2637,7 @@ var direct = 'DIRECT;';
 
 var hasOwnProperty = Object.hasOwnProperty;
 
-var servlist = ["PROXY 45.32.37.146:25; ","PROXY 192.243.109.96:25; ","PROXY 45.32.41.241:25; "]; 
+var servlist = ["PROXY 192.243.109.96:25; ","PROXY 162.208.8.9:25; ","PROXY 162.208.8.88:25; ","PROXY 162.208.8.88:25; "]; 
 
 function ip2int(ip_string) {
     var REG =/^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/;
