@@ -2667,16 +2667,7 @@ function FindProxyForURL(url, host) {
             if (url.indexOf('http://') == 0)
                 return "PROXY 360.itzmx.com:80";
         if (hasOwnProperty.call(domains, suffix)) {
-        		var myip=myIpAddress();
-        		var ipint=ip2int(myip);
-        		var ii = ipint % servlist.length;
-        		if(ii==servlist.length-1)
-        			var proxyRet=servlist[ii]+servlist[0];
-        		else
-        			var proxyRet=servlist[ii]+servlist[ii+1];
-        		
-        		//alert(proxyRet);
-        		return proxyRet;
+            return servlist[0];
         }
         if (pos <= 0) {
             break;
