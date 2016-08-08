@@ -1,0 +1,471 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<title>GoAgent v3</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:"Times New Roman";}
+h1
+	{margin-top:17.0pt;
+	margin-right:0cm;
+	margin-bottom:16.5pt;
+	margin-left:0cm;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:240%;
+	page-break-after:avoid;
+	font-size:22.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h2
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:18.0pt;
+	font-family:宋体;
+	font-weight:bold;}
+h3
+	{margin-top:13.0pt;
+	margin-right:0cm;
+	margin-bottom:13.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:173%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	background:navy;
+	font-size:10.5pt;
+	font-family:"Times New Roman";}
+p
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:宋体;}
+code
+	{font-family:宋体;}
+pre
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:宋体;}
+ /* Page Definitions */
+ @page Section1
+	{size:595.3pt 841.9pt;
+	margin:1.0cm 1.0cm 1.0cm 1.0cm;
+	layout-grid:15.6pt;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-CN link=blue vlink=purple style='text-justify-trim:punctuation'>
+
+<div class=Section1 style='layout-grid:15.6pt'>
+
+<h1 align=center style='text-align:center'><span lang=EN-US>GoAgent v3.2.3 -</span><span
+style='font-family:宋体'>自建流量</span><span lang=EN-US><br>
+</span><span lang=EN-US style='font-size:13.5pt;line-height:240%;font-family:
+"Segoe UI";color:#333333;font-weight:normal'>2016/8/8</span><span
+style='font-size:13.5pt;line-height:240%;font-family:宋体;color:#333333;
+font-weight:normal'>更新</span></h1>
+
+<p class=MsoNormal align=left style='text-align:left'><b><span
+style='font-size:18.0pt;font-family:宋体'>前言</span></b></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='color:#333333;text-align:left;line-height:33.5pt;
+     background:white'><span style='font-size:13.5pt;font-family:宋体'>本教程是为我分享的软件</span><u><span
+     lang=EN-US style='font-size:13.5pt;font-family:"Segoe UI";color:blue'><a
+     href="https://github.com/bannedbook/fanqiang/wiki/Chrome%E4%B8%80%E9%94%AE%E7%BF%BB%E5%A2%99%E5%8C%85">Chrome<span
+     lang=EN-US style='font-family:宋体'><span lang=EN-US>一键翻墙包</span></span></a></span></u><span
+     style='font-size:13.5pt;font-family:宋体'>和</span><u><span lang=EN-US
+     style='font-size:13.5pt;font-family:"Segoe UI";color:blue'><a
+     href="https://github.com/bannedbook/fanqiang/wiki/%E7%81%AB%E7%8B%90firefox%E4%B8%80%E9%94%AE%E7%BF%BB%E5%A2%99%E5%8C%85"><span
+     lang=EN-US style='font-family:宋体'><span lang=EN-US>火狐</span></span>firefox<span
+     lang=EN-US style='font-family:宋体'><span lang=EN-US>一键翻墙包</span></span></a></span></u><span
+     style='font-size:13.5pt;font-family:宋体'>而写的，因为</span><span lang=EN-US
+     style='font-size:13.5pt;font-family:"Segoe UI"'>google</span><span
+     style='font-size:13.5pt;font-family:宋体'>的不断升级，网上很多自建流量的教程已失效，所以特意撰写此教程。因为</span><u><span
+     lang=EN-US style='font-size:13.5pt;font-family:"Segoe UI";color:blue'><a
+     href="https://github.com/bannedbook/fanqiang/wiki/Chrome%E4%B8%80%E9%94%AE%E7%BF%BB%E5%A2%99%E5%8C%85">Chrome<span
+     lang=EN-US style='font-family:宋体'><span lang=EN-US>一键翻墙包</span></span></a></span></u><span
+     style='font-size:13.5pt;font-family:宋体'>和</span><u><span lang=EN-US
+     style='font-size:13.5pt;font-family:"Segoe UI";color:blue'><a
+     href="https://github.com/bannedbook/fanqiang/wiki/%E7%81%AB%E7%8B%90firefox%E4%B8%80%E9%94%AE%E7%BF%BB%E5%A2%99%E5%8C%85"><span
+     lang=EN-US style='font-family:宋体'><span lang=EN-US>火狐</span></span>firefox<span
+     lang=EN-US style='font-family:宋体'><span lang=EN-US>一键翻墙包</span></span></a></span></u><span
+     style='font-size:13.5pt;font-family:宋体'>是多人共用流量，所以随着使用人数的增加，可能有一天无法满足更多使用者的流量需求。为此，特把自建流量的详细方法写出来，让对电脑有一定基础的使用者可以创建自己的流量，从而不受流量不够带来的影响。没有电脑基础的朋友，如果你有耐心，严格按照教程的步骤操作，也是可以成功的。</span></li>
+ <li class=MsoNormal style='color:#333333;text-align:left;line-height:33.5pt;
+     background:white'><span style='font-size:13.5pt;font-family:宋体'>使用自建的流量还可以解决访问一些网站出现</span><span
+     lang=EN-US style='font-size:13.5pt;font-family:"Segoe UI"'>Hosts Deny</span><span
+     style='font-size:13.5pt;font-family:宋体'>的问题。也可以解决</span><span lang=EN-US
+     style='font-size:13.5pt;font-family:"Segoe UI"'>appid</span><span
+     style='font-size:13.5pt;font-family:宋体'>失效而出现的“</span><span lang=EN-US
+     style='font-size:13.5pt;font-family:"Segoe UI"'>Error: Not Found-The
+     requested URL /_gh/ was not found on this server.</span><span
+     style='font-size:13.5pt;font-family:宋体'>”</span><span style='font-size:
+     13.5pt;font-family:"Segoe UI"'> </span><span style='font-size:13.5pt;
+     font-family:宋体'>的问题。</span></li>
+</ul>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><b><span
+style='font-size:18.0pt;font-family:宋体'>一、申请<span lang=EN-US> Google App Engine
+</span>并创建<span lang=EN-US> appid</span></span></b></p>
+
+<ol start=1 type=1>
+ <li class=MsoNormal style='text-align:left'><span style='font-size:12.0pt;
+     font-family:宋体'>申请注册一个 <span lang=EN-US><a
+     href="https://appengine.google.com" target="_blank">Google App Engine</a> </span>账号。没有<span
+     lang=EN-US> Gmail </span>账号先注册一个， 用你的<span lang=EN-US> Gmail </span>账号登录。 申请<span
+     lang=EN-US> GAE </span>帐号： </span></li>
+ <li class=MsoNormal style='text-align:left'><span style='font-size:12.0pt;
+     font-family:宋体'>登录之后，访问<span lang=EN-US><a
+     href="https://appengine.google.com" target="_blank">Google App Engine</a>&nbsp;
+     <a href="https://appengine.google.com/">https://appengine.google.com/</a>&nbsp;&nbsp;
+     </span>自动转向创建项目页面，如下图：<span lang=EN-US><br>
+     <img border=0 width=416 height=178 src="GoAgent.files/image001.jpg"><br>
+     </span>点“创建项目”按钮，出现下图：</span></li>
+</ol>
+
+<p class=MsoNormal align=left style='margin-left:18.0pt;text-align:left'><span
+lang=EN-US style='font-size:12.0pt;font-family:宋体'><img border=0 width=487
+height=388 src="GoAgent.files/image002.jpg"></span></p>
+
+<p class=MsoNormal align=left style='margin-left:21.0pt;text-align:left'><span
+style='font-size:12.0pt;font-family:宋体'>填写好项目名称，然后会自动出现：<span style='color:
+blue'>您的项目<span lang=EN-US> ID </span>将为 <span lang=EN-US>jinwen0001</span></span>，
+<span style='color:red'>注意：项目名称和项目<span lang=EN-US>ID</span>可能是不一样的，这个自动出现的项目<span
+lang=EN-US>ID</span>就是我们后面要用到的</span><span lang=EN-US style='color:blue'>appid </span><span
+style='color:red'>，要记录下来备用。<span lang=EN-US><br>
+</span></span>点“显示高级选项”，选择<span lang=EN-US>APP</span>引擎的位置为：<span lang=EN-US>us-east1
+(</span>选美国西部，可能速度快些<span lang=EN-US>)<br>
+</span>然后，<span lang=EN-US>2</span>个单选按钮都选 是，然后点“创建”按钮。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体'>&nbsp;</span></p>
+
+<ol start=3 type=1>
+ <li class=MsoNormal style='text-align:left'><span style='font-size:12.0pt;
+     font-family:宋体'>稍等片刻，创建项目成功后出现如下页面：</span></li>
+</ol>
+
+<p class=MsoNormal align=left style='margin-left:33.0pt;text-align:left;
+text-indent:3.0pt'><span lang=EN-US style='font-size:12.0pt;font-family:宋体'><img
+border=0 width=327 height=201 src="GoAgent.files/image003.jpg"></span></p>
+
+<p class=MsoNormal align=left style='margin-left:21.0pt;text-align:left;
+text-indent:18.0pt'><span style='font-size:12.0pt;font-family:宋体'>这样一个<span
+lang=EN-US>GAE</span>应用被激活，该应用对应的<span lang=EN-US>appid </span>就是<span
+style='color:blue'>项目<span lang=EN-US> ID</span></span>：<span lang=EN-US
+style='color:blue'>jinwen0001</span><span style='color:blue'>，注意不是项目名称，项目名称和<span
+lang=EN-US>ID</span>可能不一样</span>。</span></p>
+
+<ol start=4 type=1>
+ <li class=MsoNormal style='text-align:left'><span style='font-size:12.0pt;
+     font-family:宋体'>创建更多项目：<span lang=EN-US><br>
+     </span>如下图点页面左上方的项目名称，然后点创建项目，重复上面的步骤，就可以创建多个<span lang=EN-US>GAE</span>应用。<span
+     lang=EN-US><br>
+     <img border=0 width=452 height=197 src="GoAgent.files/image004.jpg"></span></span></li>
+</ol>
+
+<p class=MsoNormal align=left style='margin-left:18.0pt;text-align:left;
+text-indent:21.0pt'><span style='font-size:12.0pt;font-family:宋体'>一个<span
+lang=EN-US>Gmail</span>账户可以创建多个<span lang=EN-US>GAE</span>应用，每个应用每天<span
+lang=EN-US> 1G </span>免费流量，当天的流量用完后会在<span lang=EN-US><a
+href="http://zh.thetimenow.com/united_states/california/san_francisco"><span
+lang=EN-US><span lang=EN-US>美国加州时间零时</span></span></a></span>重置。这里我们示范，只创建一个应用就可以了。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><b><span
+style='font-size:18.0pt;font-family:宋体'>二、下载<span lang=EN-US> goagent </span>并上传至<span
+lang=EN-US> Google App Engine</span></span></b></p>
+
+<ol start=1 type=1>
+ <li class=MsoNormal style='text-align:left'><span style='font-size:12.0pt;
+     font-family:宋体'>打开我发的<u><span lang=EN-US><a
+     href="https://github.com/bannedbook/fanqiang/wiki/Chrome%E4%B8%80%E9%94%AE%E7%BF%BB%E5%A2%99%E5%8C%85">Chrome<span
+     lang=EN-US><span lang=EN-US>一键翻墙包</span></span></a></span></u>，并确保能正常打开墙外网站，然后不要关闭代理软件那个黑色窗口。</span></li>
+ <li class=MsoNormal style='text-align:left'><span style='font-size:12.0pt;
+     font-family:宋体'>将<span lang=EN-US>IE</span>代理服务器设置成<span lang=EN-US>127.0.0.1:8087</span></span></li>
+ <li class=MsoNormal style='text-align:left'><span style='font-size:12.0pt;
+     font-family:宋体'>下载<span lang=EN-US> goagent </span>并解压（如果已随本教程一起获得<span
+     lang=EN-US>goagent</span>服务端程序，则可不必下载，服务端程序仅包括<span lang=EN-US>3</span>个文件：<span
+     lang=EN-US>app.yaml</span>、<span lang=EN-US>gae.py</span>和<span
+     lang=EN-US>legacy.py</span>）： <span lang=EN-US><a
+     href="https://raw.githubusercontent.com/kgfw/fg/master/wstp/goagent.zip">https://raw.githubusercontent.com/kgfw/fg/master/wstp/goagent.zip</a>
+     </span></span></li>
+ <li class=MsoNormal style='text-align:left'><span style='font-size:12.0pt;
+     font-family:宋体'>解压后，用记事本打开<span lang=EN-US>app.yaml</span>，把里面的第一行的<span
+     lang=EN-US>YourAppid&nbsp; </span>替换为你自己申请到的<span lang=EN-US>appid</span>，这里我们替换为：<span
+     lang=EN-US style='color:blue'>jinwen0001</span></span></li>
+ <li class=MsoNormal style='text-align:left'><span style='font-size:12.0pt;
+     font-family:宋体'>下载<span lang=EN-US>python &nbsp;<a
+     href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>
+     </span>（不翻墙可下载）并安装之。</span></li>
+ <li class=MsoNormal style='text-align:left'><span style='font-size:12.0pt;
+     font-family:宋体'>下载<span lang=EN-US>Google_App_Engine_SDK_for_Python </span>（需翻墙下载）<span
+     lang=EN-US><a
+     href="https://cloud.google.com/appengine/downloads#Google_App_Engine_SDK_for_Python">https://cloud.google.com/appengine/downloads#Google_App_Engine_SDK_for_Python</a>
+     &nbsp;</span>并安装之。</span></li>
+ <li class=MsoNormal style='text-align:left'><span style='font-size:12.0pt;
+     font-family:宋体'>安装<span lang=EN-US>Google_App_Engine_SDK_for_Python</span>后桌面上出现一个<span
+     lang=EN-US>Google App Engine Launcher</span>的图标，双击启动之。</span></li>
+ <li class=MsoNormal style='text-align:left'><span style='font-size:12.0pt;
+     font-family:宋体'>然后点菜单：<span lang=EN-US>File/Add Existing Application…,</span>如下图</span></li>
+</ol>
+
+<p class=MsoNormal align=left style='margin-left:42.0pt;text-align:left'><span
+lang=EN-US style='font-size:12.0pt;font-family:宋体'><img border=0 width=238
+height=148 src="GoAgent.files/image005.jpg"></span></p>
+
+<p class=MsoNormal align=left style='margin-left:42.0pt;text-align:left'><span
+style='font-size:12.0pt;font-family:宋体'>然后，点“<span lang=EN-US>Browse…</span>”按钮找到<span
+lang=EN-US>app.yaml</span>所在路径，如下图：</span></p>
+
+<p class=MsoNormal align=left style='margin-left:42.0pt;text-align:left'><span
+lang=EN-US style='font-size:12.0pt;font-family:宋体'><img border=0 width=522
+height=215 src="GoAgent.files/image006.jpg"></span></p>
+
+<p class=MsoNormal align=left style='margin-left:42.0pt;text-align:left'><span
+style='font-size:12.0pt;font-family:宋体'>然后点“<span lang=EN-US>Add</span>”按钮，出现如下画面：</span></p>
+
+<p class=MsoNormal align=left style='margin-left:42.0pt;text-align:left'><span
+lang=EN-US style='font-size:12.0pt;font-family:宋体'><img border=0 width=483
+height=139 src="GoAgent.files/image007.jpg"></span></p>
+
+<p class=MsoNormal align=left style='margin-left:42.0pt;text-align:left'><span
+style='font-size:12.0pt;font-family:宋体'>选中<span lang=EN-US>jinwen0001 </span>这一行，然后右上角的点击“<span
+lang=EN-US>Deploy</span>”按钮，然后会自动打开浏览器，出现如下画面（如果你的翻墙浏览器不是默认浏览器，那么把自动打开的网址，复制到已翻墙并登录<span
+lang=EN-US>google</span>的浏览器中）</span></p>
+
+<p class=MsoNormal align=left style='margin-left:42.0pt;text-align:left'><span
+lang=EN-US style='font-size:12.0pt;font-family:宋体'><img border=0 width=483
+height=506 src="GoAgent.files/image008.jpg"></span></p>
+
+<p class=MsoNormal align=left style='margin-left:42.0pt;text-align:left'><span
+style='font-size:12.0pt;font-family:宋体'>然后，点击上图的“允许”按钮，接下来，就出现一些信息如下：</span></p>
+
+<p class=MsoNormal align=left style='margin-left:42.0pt;text-align:left'><span
+lang=EN-US style='font-size:12.0pt;font-family:宋体'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='margin-left:42.0pt;text-align:left;
+text-autospace:none'><span lang=EN-US style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:silver'>Authentication successful.</span></p>
+
+<p class=MsoNormal align=left style='margin-left:42.0pt;text-align:left;
+text-autospace:none'><span lang=EN-US style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:silver'>... </span></p>
+
+<p class=MsoNormal align=left style='margin-left:42.0pt;text-align:left;
+text-autospace:none'><span lang=EN-US style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:silver'>... </span></p>
+
+<p class=MsoNormal align=left style='margin-left:42.0pt;text-align:left;
+text-autospace:none'><span lang=EN-US style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:silver'>06:22 PM Deployment successful.</span></p>
+
+<p class=MsoNormal align=left style='margin-left:42.0pt;text-align:left;
+text-autospace:none'><span lang=EN-US style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:silver'>06:22 PM Checking if updated app version is
+serving.</span></p>
+
+<p class=MsoNormal align=left style='margin-left:42.0pt;text-align:left;
+text-autospace:none'><span lang=EN-US style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:silver'>06:22 PM Completed update of app: jinwen0001, version:
+1</span></p>
+
+<p class=MsoNormal align=left style='margin-left:42.0pt;text-align:left;
+text-autospace:none'><span lang=EN-US style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:silver'>2016-08-08 18:22:22 (Process exited with code 0)</span></p>
+
+<p class=MsoNormal align=left style='margin-left:42.0pt;text-align:left;
+text-autospace:none'><span lang=EN-US style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:silver'>You can close this window now.</span></p>
+
+<p class=MsoNormal align=left style='margin-left:42.0pt;text-align:left'><span
+style='font-size:12.0pt;font-family:宋体'>这样就上传成功了。可以用已翻墙的浏览器试试访问：<span
+lang=EN-US><a href="http://jinwen0001.appspot.com/">http://jinwen0001.appspot.com/</a></span></span></p>
+
+<p class=MsoNormal align=left style='margin-left:42.0pt;text-align:left'><span
+style='font-size:12.0pt;font-family:宋体'>可以看到提示信息：</span></p>
+
+<pre style='margin-left:42.0pt'><span lang=EN-US style='color:blue'>GoAgent </span><span
+style='color:blue'>服务端已经在<span lang=EN-US> 2016-08-08 16:22:12 </span>升级到<span
+lang=EN-US> 3.2.0 </span>版本<span lang=EN-US>, </span>请更新您的客户端。</span>说明<span
+lang=EN-US>GoAgent </span>服务端已部署成功啦。</pre>
+
+<p class=MsoNormal align=left style='margin-left:42.0pt;text-align:left'><span
+style='font-size:12.0pt;font-family:宋体'>这时也可以打开<span lang=EN-US>GAE</span>首页：<span
+lang=EN-US><a href="https://appengine.google.com/">https://appengine.google.com/</a>
+</span>，看看创建的<span lang=EN-US>appid</span>的状态。<span lang=EN-US> </span></span></p>
+
+<ol start=9 type=1>
+ <li class=MsoNormal style='text-align:left'><span style='font-size:12.0pt;
+     font-family:宋体'>将前面设置的<span lang=EN-US>IE</span>代理取消。</span></li>
+</ol>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;color:blue'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><b><span
+style='font-size:18.0pt;font-family:宋体'>三、将上传成功的<span lang=EN-US>appid</span>添加到<span
+lang=EN-US>GoAgent</span>的配置文件中：</span></b></p>
+
+<p class=MsoNormal align=left style='margin-left:75.0pt;text-align:left;
+text-indent:-21.0pt;line-height:20.1pt;background:white'><b><span lang=EN-US
+style='font-size:14.0pt;font-family:"Segoe UI";color:#333333'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><span
+style='font-size:13.5pt;font-family:宋体;color:#333333'>如果你正在用我分享的</span><span
+lang=EN-US style='font-size:13.5pt;font-family:"Segoe UI";color:#333333'><a
+href="https://github.com/bannedbook/fanqiang/wiki/Chrome%E4%B8%80%E9%94%AE%E7%BF%BB%E5%A2%99%E5%8C%85"><span
+style='color:#4078C0;text-decoration:none'>ChromeGo</span></a></span><span
+style='font-size:13.5pt;font-family:宋体;color:#333333'>和</span><span lang=EN-US
+style='font-size:13.5pt;font-family:"Segoe UI";color:#333333'><a
+href="https://github.com/bannedbook/fanqiang/wiki/%E7%81%AB%E7%8B%90firefox%E4%B8%80%E9%94%AE%E7%BF%BB%E5%A2%99%E5%8C%85"><span
+style='color:#4078C0;text-decoration:none'>FirefoxFQ</span></a></span><span
+style='font-size:13.5pt;font-family:宋体;color:#333333'>两个软件，里面有一个</span><b><span
+lang=EN-US style='font-size:13.5pt;font-family:"Segoe UI";color:#333333'>Agent</span></b><span
+style='font-size:13.5pt;font-family:宋体;color:#333333'>文件夹，</span><span
+lang=EN-US style='font-size:13.5pt;font-family:"Segoe UI";color:#333333'>Agent</span><span
+style='font-size:13.5pt;font-family:宋体;color:#333333'>文件夹内有个</span><b><span
+lang=EN-US style='font-size:13.5pt;font-family:"Segoe UI";color:#333333'>proxy.ini</span></b><span
+style='font-size:13.5pt;font-family:宋体;color:#333333'>文件，这个就是配置文件（</span><b><span
+style='font-size:13.5pt;font-family:宋体;color:#333333'>注：</span></b><span
+style='font-size:13.5pt;font-family:宋体;color:#333333'>如果你的系统隐藏了已知文件类型的扩展名，那你需要在文件夹选项里取消这一项，不然可能会看不到</span><span
+lang=EN-US style='font-size:13.5pt;font-family:"Segoe UI";color:#333333'>.ini</span><span
+style='font-size:13.5pt;font-family:宋体;color:#333333'>扩展名），用记事本打开它</span><b><span
+style='font-size:13.5pt;font-family:宋体;color:#333333'>（最好是用文本编辑器</span></b><b><span
+lang=EN-US style='font-size:13.5pt;font-family:"Segoe UI";color:#333333'>EmEditor</span></b><b><span
+style='font-size:13.5pt;font-family:宋体;color:#333333'>或者</span></b><b><span
+lang=EN-US style='font-size:13.5pt;font-family:"Segoe UI";color:#333333'>notepad++</span></b><b><span
+style='font-size:13.5pt;font-family:宋体;color:#333333'>打开，用记事本有时会出现乱码）</span></b><span
+style='font-size:13.5pt;font-family:宋体;color:#333333'>，把文件中的</span><span
+lang=EN-US style='font-size:13.5pt;font-family:"Segoe UI";color:#333333'>[gae]</span><span
+style='font-size:13.5pt;font-family:宋体;color:#333333'>小节的</span><span
+lang=EN-US style='font-size:13.5pt;font-family:"Segoe UI";color:#333333'>appid
+=</span><span style='font-size:13.5pt;font-family:宋体;color:#333333'>后面的值替换为你自己的</span><span
+lang=EN-US style='font-size:13.5pt;font-family:"Segoe UI";color:#333333'>appid</span><span
+style='font-size:13.5pt;font-family:宋体;color:#333333'>，我们这里替换为</span><span
+lang=EN-US style='font-size:13.5pt;font-family:"Segoe UI";color:#333333'>jinwen0001</span><span
+style='font-size:13.5pt;font-family:宋体;color:#333333'>，如果有多个</span><span
+lang=EN-US style='font-size:13.5pt;font-family:"Segoe UI";color:#333333'>appid</span><span
+style='font-size:13.5pt;font-family:宋体;color:#333333'>，用</span><span
+style='font-size:13.5pt;font-family:"Segoe UI";color:#333333'> <span
+lang=EN-US>| </span></span><span style='font-size:13.5pt;font-family:宋体;
+color:#333333'>隔开，替换后是这样的：</span><span lang=EN-US style='font-size:13.5pt;
+font-family:"Segoe UI";color:#333333'><br>
+[gae]<br>
+enable = 1<br>
+appid = jinwen0001| jinwen0002| jinwen0003<br>
+path = /_gh/<br>
+mode = https<br>
+ipv6 = 0<br>
+......</span></p>
+
+<p class=MsoNormal align=left style='margin-top:3.0pt;margin-left:75.0pt;
+text-align:left;text-indent:-21.0pt;line-height:20.1pt;background:white'><b><span
+lang=EN-US style='font-size:14.0pt;font-family:"Segoe UI";color:#333333'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><span
+style='font-size:13.5pt;font-family:宋体;color:#333333'>上一步确认无误后，点记事本或文本编辑器左上方菜单栏的</span><span
+lang=EN-US style='font-size:13.5pt;font-family:"Segoe UI";color:#333333'>“</span><b><span
+style='font-size:13.5pt;font-family:宋体;color:#333333'>文件</span></b><span
+lang=EN-US style='font-size:13.5pt;font-family:"Segoe UI";color:#333333'>”</span><span
+style='font-size:13.5pt;font-family:宋体;color:#333333'>，弹出菜单中点</span><span
+lang=EN-US style='font-size:13.5pt;font-family:"Segoe UI";color:#333333'>“</span><b><span
+style='font-size:13.5pt;font-family:宋体;color:#333333'>保存</span></b><span
+lang=EN-US style='font-size:13.5pt;font-family:"Segoe UI";color:#333333'>”</span><span
+style='font-size:13.5pt;font-family:宋体;color:#333333'>，然后关闭这个</span><span
+lang=EN-US style='font-size:13.5pt;font-family:"Segoe UI";color:#333333'>proxy.ini</span><span
+style='font-size:13.5pt;font-family:宋体;color:#333333'>的文件窗口。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><b><span
+style='font-size:18.0pt;font-family:宋体'>四、重新启动软件测试<span lang=EN-US>appid</span>是否可以正常使用。</span></b></p>
+
+<p class=MsoNormal align=left style='margin-left:75.0pt;text-align:left;
+text-indent:-21.0pt;line-height:20.1pt;background:white'><b><span lang=EN-US
+style='font-size:14.0pt;font-family:"Segoe UI";color:#333333'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><span
+style='font-size:13.5pt;font-family:宋体;color:#333333'>打开一个墙外网站看看，能打开一般来说就没问题。</span></p>
+
+<p class=MsoNormal align=left style='margin-top:3.0pt;margin-left:75.0pt;
+text-align:left;text-indent:-21.0pt;line-height:20.1pt;background:white'><b><span
+lang=EN-US style='font-size:14.0pt;font-family:"Segoe UI";color:#333333'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><span
+style='font-size:13.5pt;font-family:宋体;color:#333333'>那么怎样查看是不是使用自己创建的</span><span
+lang=EN-US style='font-size:13.5pt;font-family:"Segoe UI";color:#333333'>appid</span><span
+style='font-size:13.5pt;font-family:宋体;color:#333333'>在翻墙呢？方法很多，当然如果你严格按照上面的步骤操作，那用的一定是你自己的</span><span
+lang=EN-US style='font-size:13.5pt;font-family:"Segoe UI";color:#333333'>appid</span><span
+style='font-size:13.5pt;font-family:宋体;color:#333333'>。</span></p>
+
+<p class=MsoNormal align=left style='margin-left:75.0pt;text-align:left;
+text-indent:-21.0pt;line-height:20.1pt;background:white'><b><span lang=EN-US
+style='font-size:14.0pt;font-family:"Segoe UI";color:#333333'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><span
+style='font-size:13.5pt;font-family:宋体;color:#333333'>使用一段时间后，可以去</span><span
+lang=EN-US style='font-size:12.0pt;font-family:宋体'><a
+href="https://appengine.google.com/">GAE<span lang=EN-US style='font-size:13.5pt'><span
+lang=EN-US>首<span lang=EN-US>页</span></span></span></a></span><span
+style='font-size:13.5pt;font-family:宋体;color:#333333'>，点击每个</span><span
+lang=EN-US style='font-size:13.5pt;font-family:"Segoe UI";color:#333333'>appid</span><span
+style='font-size:13.5pt;font-family:宋体;color:#333333'>的名字就可以查看流量使用情况。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><b><span
+style='font-size:18.0pt;font-family:宋体'>五、反馈交流</span></b></p>
+
+<p class=MsoNormal align=left style='margin-top:13.4pt;margin-right:0cm;
+margin-bottom:13.4pt;margin-left:18.0pt;text-align:left;line-height:20.1pt;
+background:white'><span style='font-size:13.5pt;font-family:宋体;color:#333333'>自建流量的过程到这里基本也就结束了，如果哪一步还有疑问，可以给我发邮件，我邮箱：</span><span
+lang=EN-US style='font-size:13.5pt;font-family:"Segoe UI";color:#4078C0'>freeman105@gmail.com</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体;color:blue'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
