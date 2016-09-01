@@ -5,7 +5,7 @@
 	<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/gcfeed/wstp12yql" /><feedburner:info xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" uri="gcfeed/wstp12yql" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><item>
 		<title>GC List v1.2 YQL</title>
 		<link />
-		<description>###############aHR0cHM6Ly96encub3BlbmRuLnh5ei8xLyxodHRwczovL3p6dS5oZWFsdGhwcm9kdWN0Lnh5ei8xLyxodHRwczovL3p6bS5oZWFsdGhpbnMueHl6LzEv###############</description>
+		<description>###############aHR0cDovL3p6di5vcGVuZG4ueHl6LzEvLGh0dHA6Ly96enQuaGVhbHRocHJvZHVjdC54eXovMS8saHR0cDovL3p6bC5oZWFsdGhpbnMueHl6LzEv###############</description>
 		<pubDate>Sat, 10 Oct 2015 13:01:30 GMT</pubDate>
 		<guid isPermaLink="false">gc-list</guid>
 	</item>
