@@ -8,6 +8,32 @@
 ==============
 在 25 端口搭建 http/https 代理。
 
+Debian 7/8 （需要一行一行复制安装）:
+-------
+apt-get update
+lsof -i:25  #查看25端口被什么程序占用
+如果25端口被sendmail占用
+service sendmail stop
+apt-get remove sendmail
+cd /etc/init.d
+rm sendmail
+如果25端口被exim4占用
+apt-get remove exim4 exim4-base exim4-config exim4-daemon-light
+rm -r /var/log/exim4/
+如果25端口被Postfix占用
+apt-get remove Postfix
+
+lsof -i:25  #查看占用25端口的进程是否卸载干净
+
+apt-get install curl
+apt-get -y install squid3 
+curl https://raw.githubusercontent.com/kgfw/fg/master/jwpac/debian-squid.conf > /etc/squid3/squid.conf
+mkdir  /var/cache/squid
+chmod 777 /var/cache/squid
+/etc/init.d/squid3 stop
+squid3 -z
+/etc/init.d/squid3 start
+
 
 Ubuntu 16.04 x64（需要一行一行复制安装，默认密码admin123）:
 -------
