@@ -1,4 +1,4 @@
-[PAC](https://github.com/bannedbook/fanqiang/wiki/pacfq)
+[PAC](https://github.com/bannedbook/fanqiang/wiki/pacfq) 
 =======
 本项目主要介绍如何利用国外VPS搭建多协议代理服务。
 
