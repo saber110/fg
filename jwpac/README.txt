@@ -8,7 +8,7 @@
 ==============
 在 25 端口搭建 http/https 代理。
 
-Debian 7/8 （需要一行一行复制安装）:
+Debian 7/8 （需要一行一行复制安装，推荐用此系统）:
 -------
 apt-get update
 lsof -i:25  #查看25端口被什么程序占用
@@ -46,7 +46,7 @@ service squid stop
 squid -z
 service squid restart
 
-CentOS 6.7 x64（推荐用此系统）:
+CentOS 6.7 x64:
 -------
 setenforce 0
 ulimit -n 800000
