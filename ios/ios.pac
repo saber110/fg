@@ -1,4 +1,4 @@
-var proxy = "PROXY xi.dnsfree.space:80;";
+var proxy =  "PROXY xi.dnsfree.space:80;";
 
 var domains = {
   "bannedbook.org": 1, 
