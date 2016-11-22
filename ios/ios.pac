@@ -19,8 +19,6 @@ var domains = {
   "bnews.co": 1, 
   "breakgfw.com": 1, 
   "hyperspaceproxy.info": 1, 
-  "singlelogin.org": 1,
-  "bookos-z1.org": 1,
   "dotheone.com": 1,
   "android-x86.org": 1,
   "web.whatapp.com": 1,
