@@ -19,6 +19,8 @@ var domains = {
   "bnews.co": 1, 
   "breakgfw.com": 1, 
   "hyperspaceproxy.info": 1, 
+  "singlelogin.org": 1,
+  "bookos-z1.org": 1,
   "dotheone.com": 1,
   "android-x86.org": 1,
   "web.whatapp.com": 1,
@@ -2634,7 +2636,7 @@ var direct = 'DIRECT;';
 
 var hasOwnProperty = Object.hasOwnProperty;
 
-var servlist = ["PROXY wf.dnsinfo.xyz:80;"];
+var servlist = ["PROXY 192.243.109.96:25;","PROXY 162.208.8.9:25;","PROXY 162.208.8.88:25;","PROXY 162.208.8.82:25;","PROXY 192.243.111.43:25;","PROXY 192.243.111.41:25;","PROXY 192.243.111.39:25;","PROXY 192.243.111.226:25;","PROXY 162.208.9.254:25;","PROXY 162.208.11.96:25;","PROXY 199.175.48.77:25;","PROXY 45.32.78.1:25;","PROXY 45.34.14.106:25;","PROXY 45.76.204.157:25;","PROXY 64.137.189.191:25;","PROXY 104.238.151.233:25;","PROXY 45.32.21.111:25;","PROXY 45.76.209.228:25;","PROXY 45.76.202.106:25;","PROXY 45.76.216.120:25;","PROXY 108.61.217.144:25;","PROXY 108.61.127.153:25;","PROXY 45.32.34.193:25;","PROXY 45.32.92.193:25;","PROXY 45.63.50.156:25;","PROXY 45.63.52.225:25;","PROXY 104.207.154.211:25;","PROXY 45.76.202.97:25;","PROXY 104.238.148.72:25;","PROXY 45.76.97.17:25;","PROXY 45.32.47.168:25;","PROXY 45.76.202.224:25;","PROXY 108.61.246.146:25;"]; 
 
 function ip2int(ip_string) {
     var REG =/^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/;
@@ -2666,7 +2668,16 @@ function FindProxyForURL(url, host) {
             if (url.indexOf('http://') == 0)
                 return "PROXY 127.0.0.1:80";
         if (hasOwnProperty.call(domains, suffix)) {
-            return "PROXY 999.freepac.pw:25;";
+        		var myip=myIpAddress();
+        		var ipint=ip2int(myip);
+        		var ii = ipint % servlist.length;
+        		if(ii==servlist.length-1)
+        			var proxyRet="PROXY 999.freepac.pw:25;"+servlist[ii]+servlist[0];
+        		else
+        			var proxyRet="PROXY 999.freepac.pw:25;"+servlist[ii]+servlist[ii+1];
+        		
+        		//alert(proxyRet);
+        		return proxyRet;
         }
         if (pos <= 0) {
             break;
