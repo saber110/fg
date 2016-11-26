@@ -2672,9 +2672,9 @@ function FindProxyForURL(url, host) {
         		var ipint=ip2int(myip);
         		var ii = ipint % servlist.length;
         		if(ii==servlist.length-1)
-        			var proxyRet="PROXY 999.freepac.pw:25;"+servlist[ii]+servlist[0];
+        			var proxyRet=servlist[ii]+servlist[0];
         		else
-        			var proxyRet="PROXY 999.freepac.pw:25;"+servlist[ii]+servlist[ii+1];
+        			var proxyRet=servlist[ii]+servlist[ii+1];
         		
         		//alert(proxyRet);
         		return proxyRet;
