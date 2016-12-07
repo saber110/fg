@@ -1,0 +1,8 @@
+文件说明：
+ChromeGo-lite.7z   Chrome一键翻墙包轻便版，需自行安装Google Chrome浏览器，含4种翻墙软件。
+ChromeGo-XP.7z     Chrome一键翻墙包 for Windows XP，已包含Google Chrome浏览器，含4种翻墙软件。    
+ChromeGo.7z 			 Chrome一键翻墙包，支持XP以上的版本（不含xp），已包含安装Google Chrome浏览器，含4种翻墙软件。           
+FirefoxFQ.7z			 火狐firefox一键翻墙包，含4种翻墙软件。
+
+更多软件，请访问：
+https://github.com/bannedbook/fanqiang/wiki
