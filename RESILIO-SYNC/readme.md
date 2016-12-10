@@ -60,6 +60,9 @@ Windows Phone
 ，就可以看到免费下载链接。如果你下载的是 Windows上运行的 exe，会自带“数字签名”。为了保险起见，可以查看一下如下图。
 
 <img src="https://raw.githubusercontent.com/kgfw/fg/master/BTSync//image001.jpg" alt="" width="409" height="467" border="0" />
+
+如果使用Windows XP系统，请从这里下：<a href="http://syncapp.bittorrent.com/1.4.111/" target="_blank">http://syncapp.bittorrent.com/1.4.111/</a>
+
 <h3>四、RESILIO SYNC的安装</h3>
 （考虑到大部分人用的是 Windows，俺就以这个系统为例），安装很简单，启动安装程序后，一路点击“下一步（Next）”即可。
 
